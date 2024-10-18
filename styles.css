@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-image: url('https://images.unsplash.com/photo-1581537213713-1c72870c5b80');
+    background-image: url('https://images.unsplash.com/photo-1544085311-11a028465b03?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9yd2F5fGVufDB8fDB8fHww');
     background-size: cover;
     background-position: center;
 }
@@ -12,6 +12,3 @@ section {
     padding: 40px 0;
 }
 
-footer {
-    background-color: #f8f9fa;
-}
