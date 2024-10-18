@@ -1,0 +1,17 @@
+body {
+    font-family: Georgia, sans-serif;
+}
+
+header {
+    background-image: url('https://images.unsplash.com/photo-1581537213713-1c72870c5b80');
+    background-size: cover;
+    background-position: center;
+}
+
+section {
+    padding: 40px 0;
+}
+
+footer {
+    background-color: #f8f9fa;
+}
