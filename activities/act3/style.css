@@ -1,1 +1,42 @@
 
+.bg-maroon {
+    background-color: #800000;
+}
+
+.text-maroon {
+    color: #800000;
+}
+
+.btn-maroon {
+    background-color: #800000;
+    color: white;
+}
+
+.btn-maroon:hover {
+    background-color: #660000;
+    color: white;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shadow-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    background-image: linear-gradient(to right, #800000, #990000);
+    padding: 3rem 0;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.9rem;
+}
