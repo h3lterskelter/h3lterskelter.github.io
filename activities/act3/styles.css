@@ -22,6 +22,12 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card img.card-img-top {
+    border-radius: 5px 5px 0 0;
+    height: 200px
+    object-fit: cover;
+}
+
 .shadow-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
