@@ -1,57 +1,50 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
+  background: url('https://i.imgur.com/H81b5hS.png') repeat;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    box-sizing: border-box;
+.ginger-text {
+  color: #d2691e;
 }
 
-.info-column, .image-column {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    border-radius: 8px;
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.info-column {
-    max-width: 400px;
+#catinfo p {
+  font-size: 1.2em;
+  color: #555;
 }
 
-
-select, button {
-    padding: 10px;
-    margin: 10px 0;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+#catinfo h2 {
+  color: #d2691e;
 }
 
-
-h2, h3 {
-    color: #333;
+#catimage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
+.d-flex {
+  display: flex;
+  justify-content: space-between;
 }
 
-li {
-    margin-bottom: 10px;
+@media (min-width: 768px) {
+  .d-flex {
+    flex-direction: row;
+  }
 }
 
-#cat-photo {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
 }
+
+#image-column {
+  display: none;
+}
+
