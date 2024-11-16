@@ -1,50 +1,27 @@
 body {
+  background-color: #f9f4e7;
   background: url('https://i.imgur.com/H81b5hS.png') repeat;
   margin: 0;
   padding: 0;
 }
 
-.ginger-text {
+.gingertext {
   color: #d2691e;
 }
 
-.shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.container-fluid .flex-fill {
+  flex: 1;
 }
 
-#catinfo p {
-  font-size: 1.2em;
-  color: #555;
-}
-
-#catinfo h2 {
-  color: #d2691e;
-}
-
-#catimage img {
-  max-width: 100%;
+#cat-image img {
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  max-height: 300px;
+  object-fit: cover;
 }
 
-.d-flex {
-  display: flex;
-  justify-content: space-between;
+header img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
-
-@media (min-width: 768px) {
-  .d-flex {
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 768px) {
-  .d-flex {
-    flex-direction: column;
-  }
-}
-
-#image-column {
-  display: none;
-}
-
