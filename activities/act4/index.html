@@ -27,48 +27,54 @@
             </div>
         </div>
 
-        <div class="image-column">
-            <h2>Cat Photo</h2>
-            <img id="cat-photo" src="" alt="Cat photo" />
+        <div class="col-md-6 flex-column shadow-box p-4">
+            <div id="cat-image" class="d-flex justify-content-center align-items-center">
+                <p>Select a breed to see the image</p>
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://api.thecatapi.com/v1/breeds')
+        const breedSelect = document.getElementById('breed-select');
+        const searchButton = document.getElementById('search-btn');
+
+        fetch('https://api.thecatapi.com/v1/breeds')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(breed => {
+                    const option = document.createElement('option');
+                    option.value = breed.id;
+                    option.textContent = breed.name;
+                    breedSelect.appendChild(option);
+                });
+            })
+            .catch(err => console.error('Error fetching cat breeds:', err));
+
+        // When search button is clicked, fetch breed details
+        searchButton.addEventListener('click', function() {
+            const breedId = breedSelect.value;
+            if (!breedId) return;
+
+            fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
                 .then(response => response.json())
                 .then(data => {
-                    const selectElement = document.getElementById('cat-select');
-                    data.forEach(breed => {
-                        const option = document.createElement('option');
-                        option.value = breed.id;
-                        option.textContent = breed.name;
-                        selectElement.appendChild(option);
-                    });
-                });
+                    const breedData = data[0];
+                    const breedDetails = breedData.breeds[0];
 
-            document.getElementById('search-button').addEventListener('click', function() {
-                const breedId = document.getElementById('cat-select').value;
-                if (breedId) {
-                    fetchCatInfo(breedId);
-                }
-            });
+                    // Update breed information
+                    document.getElementById('weight').textContent = breedDetails.weight.metric + ' kg';
+                    document.getElementById('temperament').textContent = breedDetails.temperament;
+                    document.getElementById('origin').textContent = breedDetails.origin;
+                    document.getElementById('lifespan').textContent = breedDetails.life_span + ' years';
 
-            function fetchCatInfo(breedId) {
-                fetch(`https://api.thecatapi.com/v1/breeds/${breedId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('breed-name').textContent = data.name;
-                        document.getElementById('description').textContent = data.description;
-                        document.getElementById('weight').textContent = data.weight.imperial + ' lbs';
-                        document.getElementById('temperament').textContent = data.temperament;
-                        document.getElementById('origin').textContent = data.origin;
-                        document.getElementById('life-span').textContent = data.life_span + ' years';
-                        document.getElementById('wiki-link').href = data.wikipedia_url;
-                        document.getElementById('cat-photo').src = data.image.url;
-                    });
-            }
+                    // Display cat image
+                    const catImageDiv = document.getElementById('cat-image');
+                    catImageDiv.innerHTML = `<img src="${breedData.url}" alt="Image of ${breedDetails.name}" class="img-fluid rounded">`;
+                })
+                .catch(err => console.error('Error fetching cat breed data:', err));
         });
+    });
     </script>
 </body>
 </html>
