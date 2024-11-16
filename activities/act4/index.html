@@ -11,30 +11,33 @@
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <header class="text-center mt-4">
-      <img src="https://i.imgur.com/tYJunMt.png" alt="Cute Cat Banner" class="img-fluid shadow rounded">
-    </header>
+    <div class="container-fluid">
+        <header class="text-center mt-4">
+          <img src="https://i.imgur.com/tYJunMt.png" alt="Cute Cat Banner" class="img-fluid max-width shadow rounded">
+        </header>
 
     <div class="d-flex justify-content-between align-items-start mt-4">
       <div class="flex-fill shadow p-4 bg-light rounded" style="max-width: 48%; margin-bottom: 30px;">
         <div class="mb-4">
-          <label for="breedselect" class="form-label ginger-text">Choose a Cat Breed:</label>
+          <label for="breedselect" class="form-label gingertext">Choose a Cat Breed:</label>
           <div class="d-flex">
             <select id="breedselect" class="form-select me-2" style="max-width: 250px;">
               <option value="" disabled selected>Loading breeds...</option>
             </select>
-            <button id="searchbutton" class="btn btn-primary">Search</button>
+            <button id="searchbutton" class="btn btn-primary" style="background-color: #d2691e;">Search</button>
           </div>
         </div>
 
         <div id="catinfo" class="mt-4 text-center">
-          <p>Select a breed to see details.</p>
+          <p>Select a breed to see their details.</p>
         </div>
       </div>
 
       <div id="imagecolumn" class="flex-fill shadow p-4 bg-light rounded" style="max-width: 48%; display: none;">
         <div id="catimage" class="text-center">
+        </div>
+        <div class="text-center mt-3">
+          <button id="viewgallery" class="btn btn-secondary" style="background-color: #d2691e;">View Gallery</button>
         </div>
       </div>
     </div>
