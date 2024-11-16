@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="info-column">
+            <h2>Select a Cat Breed</h2>
+            <select id="cat-select">
+                <option value="">--Select a breed--</option>
+            </select>
+            <button id="search-button">Search</button>
+            <div id="cat-info">
+                <h3 id="breed-name"></h3>
+                <p id="description"></p>
+                <ul>
+                    <li><strong>Average Weight:</strong> <span id="weight"></span></li>
+                    <li><strong>Temperament:</strong> <span id="temperament"></span></li>
+                    <li><strong>Origin:</strong> <span id="origin"></span></li>
+                    <li><strong>Life Span:</strong> <span id="life-span"></span></li>
+                    <li><strong>Wikipedia:</strong> <a id="wiki-link" href="#" target="_blank">View on Wikipedia</a></li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="image-column">
+            <h2>Cat Photo</h2>
+            <img id="cat-photo" src="" alt="Cat photo" />
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://api.thecatapi.com/v1/breeds')
+                .then(response => response.json())
+                .then(data => {
+                    const selectElement = document.getElementById('cat-select');
+                    data.forEach(breed => {
+                        const option = document.createElement('option');
+                        option.value = breed.id;
+                        option.textContent = breed.name;
+                        selectElement.appendChild(option);
+                    });
+                });
+
+            document.getElementById('search-button').addEventListener('click', function() {
+                const breedId = document.getElementById('cat-select').value;
+                if (breedId) {
+                    fetchCatInfo(breedId);
+                }
+            });
+
+            function fetchCatInfo(breedId) {
+                fetch(`https://api.thecatapi.com/v1/breeds/${breedId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('breed-name').textContent = data.name;
+                        document.getElementById('description').textContent = data.description;
+                        document.getElementById('weight').textContent = data.weight.imperial + ' lbs';
+                        document.getElementById('temperament').textContent = data.temperament;
+                        document.getElementById('origin').textContent = data.origin;
+                        document.getElementById('life-span').textContent = data.life_span + ' years';
+                        document.getElementById('wiki-link').href = data.wikipedia_url;
+                        document.getElementById('cat-photo').src = data.image.url;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
