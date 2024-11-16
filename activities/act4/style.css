@@ -19,3 +19,8 @@ body {
   max-height: 300px;
   object-fit: cover;
 }
+
+header img {
+  margin: 0;
+  padding: 0;
+}
