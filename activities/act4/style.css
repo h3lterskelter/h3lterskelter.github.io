@@ -13,14 +13,14 @@ body {
   flex: 1;
 }
 
-#cat-image img {
+#catimage img {
   width: 100%;
   height: auto;
   max-height: 300px;
   object-fit: cover;
 }
 
-header img {
-  margin: 0;
-  padding: 0;
+#header-img{
+  height:auto;
+  width:200px;
 }
