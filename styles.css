@@ -1,48 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.bg-maroon {
-    background-color: #800000;
+body{
+    font-family: "Poppins", sans-serif;
+}
+.secondpage{
+    background-color:black;
+    color: aliceblue;
+    clear:both;
+}
+.thirdpage{
+    background-color: white;
+    color: black;
+}
+.fourthpage{
+    background-color: black;
+    color: aliceblue;
+}
+.fifthpage{
+    background-color: white;
+    color: black;
+}
+.sixthpage{
+    background-color: black;
+    color: aliceblue;
+}
+.seventhpage{
+    background-color: white;
+    color: black;
+}
+.eighthpage{
+    background-color: black;
+    color: aliceblue;
+}
+.ninthpage{
+    background-color: white;
+    color: black;
 }
 
-.text-maroon {
-    color: #800000;
-}
-
-.btn-maroon {
-    background-color: #800000;
-    color: white;
-}
-
-.btn-maroon:hover {
-    background-color: #660000;
-    color: white;
-}
 
 .card {
-    border: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 15px; 
+         transition: box-shadow 0.3s ease-in-out; 
+}
+        
+.card-body {
+    text-align: center;
 }
 
-.card img.card-img-top {
-    border-radius: 5px 5px 0 0;
-    height: 200px
-    object-fit: cover;
+.card img {
+    width: 100%;
+    height: 200px;
 }
 
-.shadow-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+
+.card:hover {
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-header {
-    background-image: linear-gradient(to right, #800000, #990000);
-    padding: 3rem 0;
+img.anton{
+    height: 400px;
+    width: auto;
+    border-radius: 25px;
 }
 
-h1, h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+.gradient-custom {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(124, 126, 129, 0.9), rgba(72, 79, 90, 0.9));
+  }
+
+header.nav-fixed {
+    width: 100%;
+    position: fixed;
+    transition: 0.3s ease-in-out;
 }
 
-footer {
-    font-size: 0.9rem;
+.nav-active {
+    background-color:#fff;
+    box-shadow: 5px -1px 12px -5px grey;
 }
+
+nav {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  }
+
+.carousel {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.carousel-inner img {
+    width: 50%;
+    height: auto;
+    max-height: 50%;
+    margin: 0 auto;
+  }
