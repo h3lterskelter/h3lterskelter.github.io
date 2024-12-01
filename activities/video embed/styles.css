@@ -3,95 +3,30 @@
 body{
     font-family: "Poppins", sans-serif;
 }
-.secondpage{
-    background-color:black;
-    color: aliceblue;
-    clear:both;
-}
-.thirdpage{
-    background-color: white;
-    color: black;
-}
-.fourthpage{
-    background-color: black;
-    color: aliceblue;
-}
-.fifthpage{
-    background-color: white;
-    color: black;
-}
-.sixthpage{
-    background-color: black;
-    color: aliceblue;
-}
-.seventhpage{
-    background-color: white;
-    color: black;
-}
-.eighthpage{
-    background-color: black;
-    color: aliceblue;
-}
-.ninthpage{
-    background-color: white;
-    color: black;
-}
-
-
-.card {
-        border-radius: 15px; 
-         transition: box-shadow 0.3s ease-in-out; 
-}
-        
-.card-body {
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-}
-
-
-
-.card:hover {
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-img.anton{
-    height: 400px;
-    width: auto;
-    border-radius: 25px;
-}
 
 .gradient-custom {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(124, 126, 129, 0.9), rgba(72, 79, 90, 0.9));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(124, 126, 129, 0.9), rgba(72, 79, 90, 0.9));
+    }
+  
+  header.nav-fixed {
+      width: 100%;
+      position: fixed;
+      transition: 0.3s ease-in-out;
   }
+  
+  .nav-active {
+      background-color:#fff;
+      box-shadow: 5px -1px 12px -5px grey;
+  }
+  
+  nav {
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    }
 
-header.nav-fixed {
-    width: 100%;
-    position: fixed;
-    transition: 0.3s ease-in-out;
+.musicsection {
+    background-color: black;
 }
 
-.nav-active {
-    background-color:#fff;
-    box-shadow: 5px -1px 12px -5px grey;
+.catssection {
+    background-color: black;
 }
-
-nav {
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  }
-
-.carousel {
-    width: auto;
-    height: auto;
-    margin: 0 auto;
-}
-
-.carousel-inner img {
-    width: 50%;
-    height: auto;
-    max-height: 50%;
-    margin: 0 auto;
-  }
